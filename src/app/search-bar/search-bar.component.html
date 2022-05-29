@@ -1,0 +1,14 @@
+<h1>
+  Professional Search Engine
+</h1>
+
+<div>
+  <label> Type the word or phrase you're looking for</label>
+  <input type="text" (keyup)="searchOnKeyUp($event)" list="searchResults" [formControl]="searchedPhrase" placeholder="e.g. spring rolls"/>
+  <datalist id="searchResults">
+    <option *ngFor="let sr of results" [value]="sr">{{ sr }}</option>
+  </datalist>
+
+  <button type="button" (click)="searchOnGoogle()">Search</button>
+
+</div>
